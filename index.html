@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>IMDB</title>
+
+        <!-- #CSS Main-->
+        <link rel="stylesheet" href="./main.css"/>
+
+        <!-- #Slider CSS -->
+        <link rel="stylesheet" href="./slider.css">
+
+        <!-- #Header CSS-->
+        <link rel="stylesheet" href="./header.css"/>
+
+        <!-- #Font Awesome-->
+        <script src="https://kit.fontawesome.com/eccb9ba75f.js" crossorigin="anonymous"></script>
+
+        <!-- #Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Roboto+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+
+    </head>
+
+    <!--Body Widget-->
+    <body>
+        <!-- #Header -->
+        <header id="main-header">
+
+            <!-- #Desktop Header -->
+            <nav class="main-header-desktop">
+                <div class="desktop-logo">
+                    <div class="logo-wrapper">
+                        <a href="index.html">IMDb</a>
+                    </div>
+                </div>
+                <form class="desktop-form">
+                    <div class="menu-btn">
+                        <i class="fa-solid fa-bars"></i> Menu
+                    </div>
+                    <div class="search-box">
+                        <div class="search-input-btn">
+                            <span id="to-change">All</span> <i class="fa-solid fa-sort-down"></i>
+                            <div class="drop-down-options">
+                                <ul>
+                                    <li onclick="trackChange('all')"><i class="fa-solid fa-magnifying-glass"></i>All</li>
+                                    <li onclick="trackChange('title')"><i class="fa-solid fa-film"></i>Titles</li>
+                                    <li onclick="trackChange('episode')"><i class="fa-solid fa-tv"></i>TV Episodes</li>
+                                    <li onclick="trackChange('celebs')"><i class="fa-solid fa-user-tie"></i>Celebs</li>
+                                    <li onclick="trackChange('company')"><i class="fa-solid fa-building"></i>Companies</li>
+                                    <li onclick="trackChange('keyword')"><i class="fa-solid fa-square-caret-right"></i>Keyword</li>
+                                    <li onclick="trackChange('advance')"><i class="fa-solid fa-video"></i>AdvancedSearch >></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="search-input-box-wrapper">
+                            <input id="input-box" class="search-input-box" type="text" placeholder="IMDb Search" onkeyup="request()"/>
+                            <div class="search-submit-btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <div id="search-result">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <ul class="desktop-action">
+                    <li class="pro-action">
+                        <a href="#">IMDb<span class="pro">Pro</span></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="watchlist-action">
+                        <a href="#"><i class="fa-solid fa-square-plus"></i> Watchlist</a>
+                    </li>
+                    <li class="signin-action">
+                        <a href="#">Sing In</a>
+                    </li>
+                    <li class="lang-action">
+                        en <i class="fa-solid fa-sort-down"></i>
+                    </li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <!-- #Top Slider -->
+
+        <div class="body-wrapper">
+
+            <div id="body-controller"></div>
+
+            <!-- #Trending Movies/Tv Show Of Week -->
+            <section class="first-slide">
+                <div class="head">
+                    <span>|</span>
+                    <div class="copy">Top on IMDb this week <i class="fa-solid fa-greater-than"></i></div>
+                </div>
+                <div id="slider" class="common"></div>
+            </section>
+
+            <!-- #Top Movies of Today -->
+            <section class="first-slide">
+                <div class="head">
+                    <span>|</span>
+                    <div class="copy">Fan Favorites <i class="fa-solid fa-greater-than"></i></div>
+                </div>
+                <div id="slider2" class="common"></div>
+            </section>
+
+            <!--  #Top TV Shows of Today-->
+            <section class="first-slide">
+                <div class="head">
+                    <span>|</span>
+                    <div class="copy">Explore TV Shows <i class="fa-solid fa-greater-than"></i></div>
+                </div>
+                <div id="slider3" class="common"></div>
+            </section>
+
+            <div class="separator"></div>
+
+            <!-- #Footer -->
+            <footer>
+                <div class="btn-wrapper">
+                    <div class="sign-in-btn">sign in for more access</div>
+                </div>
+                <ul class="btn-wrapper links">
+                    <li><i class="fa-brands fa-tiktok"></i></li>
+                    <li><i class="fa-brands fa-instagram"></i></li>
+                    <li><i class="fa-brands fa-twitter"></i></li>
+                    <li><i class="fa-brands fa-youtube"></i></li>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                </ul>
+
+                <ul class="btn-wrapper">
+                    <li>Get the IMDb App <i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Help <i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>SiteIndex<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>IMDb Pro<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Box Office Mojo<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>IMDb Developer</li>
+                </ul>
+            
+                <ul class="btn-wrapper">
+                    <li>Press Room<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Advertising<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Jobs<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Conditions of Use<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Privacy Policy<i class="fa-solid fa-arrow-up-right-from-square"></i></li>
+                    <li>Your Ads Privacy Choice</li>
+                </ul>
+            </footer>
+
+
+        </div>
+     
+
+        <!-- #Global JavaScript -->
+        <script lang="JavaScript" src="./global.js"></script>
+    </body>
+</html>
